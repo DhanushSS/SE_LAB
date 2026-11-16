@@ -1,0 +1,81 @@
+.F.F.F                                                                   [100%]
+=================================== FAILURES ===================================
+____________________________ test_parse_pnr_invalid ____________________________
+test_train_fare.py:14: in test_parse_pnr_invalid
+    @example('')
+                 
+../../venv/lib/python3.15/site-packages/hypothesis/core.py:1730: in _raise_to_user
+    raise the_error_hypothesis_found
+test_train_fare.py:17: in test_parse_pnr_invalid
+    parse_pnr(value)
+train_fare.py:4: in parse_pnr
+    return int(pnr[0]), int(pnr[1:])
+               ^^^^^^
+E   IndexError: string index out of range
+E   Failing explicit example: test_parse_pnr_invalid(
+E       value='',
+E   )
+________________________ test_journey_distance_invalid _________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 24, in test_journey_distance_invalid
+  |     def test_journey_distance_invalid(value):
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 25, in test_journey_distance_invalid
+    |     with pytest.raises(ValueError):
+    |          ~~~~~~~~~~~~~^^^^^^^^^^^^
+    | Failed: DID NOT RAISE ValueError
+    | Failing test case: test_journey_distance_invalid(
+    |     value='1',
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         /Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/train_fare.py:8
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 26, in test_journey_distance_invalid
+    |     journey_distance(value)
+    |     ~~~~~~~~~~~~~~~~^^^^^^^
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/train_fare.py", line 7, in journey_distance
+    |     distances = [int(d) for d in distances_csv.split(',')]
+    |                                  ^^^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_journey_distance_invalid(
+    |     value=None,
+    | )
+    +------------------------------------
+___________________________ test_berth_type_invalid ____________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 33, in test_berth_type_invalid
+  |     def test_berth_type_invalid(value):
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 34, in test_berth_type_invalid
+    |     with pytest.raises(ValueError):
+    |          ~~~~~~~~~~~~~^^^^^^^^^^^^
+    | Failed: DID NOT RAISE ValueError
+    | Failing test case: test_berth_type_invalid(
+    |     value='S3-0',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/test_train_fare.py", line 35, in test_berth_type_invalid
+    |     berth_type(value)
+    |     ~~~~~~~~~~^^^^^^^
+    |   File "/Users/dhanushss/Documents/Codex/2026-11-13/https-github-com-setapesu26-l6-l7-4/work/train-fare/Lab 7/train_fare.py", line 11, in berth_type
+    |     coach, number = seat.split('-')
+    |                     ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_berth_type_invalid(
+    |     value=None,
+    | )
+    +------------------------------------
+=========================== short test summary info ============================
+FAILED test_train_fare.py::test_parse_pnr_invalid - IndexError: string index ...
+FAILED test_train_fare.py::test_journey_distance_invalid - BaseExceptionGroup...
+FAILED test_train_fare.py::test_berth_type_invalid - BaseExceptionGroup: Hypo...
+3 failed, 3 passed in 2.85s

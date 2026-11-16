@@ -1,0 +1,8 @@
+==== Running parse_pnr ====
+Enter a 10 digit PNR (e.g. 4521367890): Zone and Number: (4, 521367890)
+
+==== Running journey_distance ====
+Enter station distances as CSV (e.g. 0,120,340): Total Distance: 340
+
+==== Running berth_type ====
+Enter coach and seat (e.g. S3-45): Coach and Berth: ('S3', 'MB')
